@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background-image: url('Assets/Desktop.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 75vh;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    #message-container {
+      width: 80%;
+      max-width: 1200px;
+      overflow-y: auto;
+      /* overflow: hidden; */
+      scroll-behavior: smooth; 
+    }
+    #message-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    #message-container div {
+     
+      padding: 5px;
+    }
+/* 
+    #message-container div:nth-child(2n) {
+      background-color: #FFF;
+    } */
+
+    #send-container {
+      position: fixed;
+      padding-bottom: 30px;
+      bottom: 0;
+      /* background-color: white; */
+      max-width: 1200px;
+      width: 80%;
+      display: flex;
+    }
+
+    #message-input {
+      flex-grow: 1;
+      border-radius: 15px;
+    }
+
+
+
+
+
+
+/* Container styling for messages */
+.message {
+  display: flex;
+  margin-bottom: 8px;
+  padding: 4px;
+}
+
+/* Style for your (my) messages */
+.my-message {
+  justify-content: flex-end;
+}
+
+.my-message .message-bubble {
+  background-color: #d3d3d3; /* Gray for your messages */
+  color: black;
+  border-bottom-right-radius: 0;
+}
+
+/* Style for foreign (other participants') messages */
+.foreign-message {
+  justify-content: flex-start;
+}
+
+.foreign-message .message-bubble {
+  background-color: #f8bd60; /* Orange for other participants' messages */
+  color: white;
+  border-bottom-left-radius: 0;
+}
+
+/* General message bubble styling */
+.message-bubble {
+  max-width: 60%;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+
+/* #send-button{
+
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+
+  margin-left:10px
+} */
+
+  </style>
+</head>
+<body>
+  <div id= "movie-name">Movie:</div>
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input">
+    <button type="submit" id="send-button">Send
+      <!-- <img src="Assets/4458496.png"/> -->
+    </button>
+  </form>
+</body>
+</html>
