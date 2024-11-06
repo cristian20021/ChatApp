@@ -31,5 +31,6 @@ pnpm install socket.io
 ```bash
 pnpm devStart
 ```
-
+5. Open multiple browser tabs to http://localhost:3000
+6. Input your name and start chatting
 
